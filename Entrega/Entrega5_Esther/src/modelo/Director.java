@@ -5,6 +5,12 @@ public class Director {
     private String apellidos;
     private boolean oscarganado;
 
+    public Director(String nombre, String apellidos, boolean oscarganado) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.oscarganado = oscarganado;
+    }
+
     public String haGanadoOscar(){
         if(oscarganado){
             return "Sí";

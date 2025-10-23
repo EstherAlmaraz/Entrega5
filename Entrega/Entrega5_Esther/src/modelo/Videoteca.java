@@ -23,11 +23,11 @@ public class Videoteca {
     }
 
     public int getContador() {
-        return contador;
+        return contadorPeliculas;
     }
 
     public void setContador(int contador) {
-        this.contador = contador;
+        this.contadorPeliculas = contador;
     }
 
     public Videoteca(int numPeliculas) {
