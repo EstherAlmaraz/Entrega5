@@ -1,8 +1,8 @@
 {
     "java.project.referencedLibraries": [
-        "/Users/esther/Downloads/biblioteca11.jar"
+        "c:\\Users\\alumno\\Downloads\\biblioteca11.jar"
     ],
     "java.project.sourcePaths": [
-        "Entrega/Entrega5_Esther/src"
+        "Entrega\\Entrega5_Esther\\src"
     ]
 }

@@ -1,4 +1,4 @@
-
+import com.coti.tools.DiaUtil;
 import com.coti.tools.Esdia;
 import modelo.Pelicula;
 import modelo.Videoteca;
@@ -86,5 +86,3 @@ public class App {
 
         
 }
-git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
