@@ -4,7 +4,7 @@ public class Videoteca {
     
     private Pelicula[] peliculas;
     private int contadorPeliculas;
-    private float velocidad;
+    private float velocidad=1.0f;
 
     public int getContadorPeliculas() {
         return contadorPeliculas;

@@ -35,17 +35,20 @@ public class App {
                 break;
             case 2:
                 System.out.println("Has seleccionado la opción 2: Configurar velocidad de reproducción");
+                float velocidadReproducción=Esdia.readInt("Introduzca la velocidad de reproducción",0,10); //Limito la velocidad de reproducción para un mínimo de 0 y un máximo de 10
+                videoteca.setVelocidad(velocidadReproducción);
+                System.out.printf("Velocidad de reproducción establecida a %.1f\n",velocidadReproducción);
                 break;
             case 3:
             //Comprobar que no esté llena
                 if(videoteca.isFull()){
                     System.err.println("La videoteca está llena. No se pueden añadir más películas.");
-                }else{}
+                }else{
                 //Pedir todos los datos
                 System.out.println("Introduzca los datos:");
                 String titulo= Esdia.readString_ne("Título:");
-                int anioEstreno= Esdia.readInt("Año de estreno:");
-                int duracionMinutos= Esdia.readInt("Duración en minutos:");
+                int anioEstreno= Esdia.readInt("Año de estreno:",1800,2025);
+                int duracionMinutos= Esdia.readInt("Duración en minutos:",0,500);
                 float valoracion= Esdia.readFloat("Valoración (0.0 - 10.0):", 0.0f, 10.0f);
                 String nombre= Esdia.readString_ne("Nombre del director:");
                 String apellidos= Esdia.readString_ne("Apellidos del director:");
@@ -60,11 +63,14 @@ public class App {
                     System.out.println("Se ha añadido la película correctamente.");
                 }else{
                     System.err.println("Ha habido un problema.");
-                }
+                }}
 
                 break;
             case 4:
-                Pelicula[] pelis=videoteca.getPeliculas();
+        Pelicula[] pelis=videoteca.getPeliculas();
+        // Cabecera: todas las etiquetas son Strings — usar %s para evitar IllegalFormatConversionException
+        System.out.printf("|%10s|%10s|%10s %10s|%10s|%10s|%10s|%10s|%n",
+            "TITULO","AÑO","NOMBRE","APELLIDOS","OSCAR","DURACION","TIEMPO1","VALORACION");
                 for(Pelicula pelicula:pelis){
                     //OJO puede ser null
                     if(pelicula!=null){
@@ -74,6 +80,9 @@ public class App {
                 break;
             case 5:
                 System.out.println("Gracias por usar la aplicaión. ¡Hasta luego!");
+                // Borrar todas las películas de la videoteca antes de salir.
+                videoteca.resetearVideoteca(videoteca.getPeliculas().length); 
+                System.out.println("Todas las películas han sido borradas.");
                 continuar=false;
 
                 break;
